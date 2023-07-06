@@ -1,4 +1,4 @@
-from chatbot.utils.Preprocess import Preprocess
+from utils.Preprocess import Preprocess_0
 from tensorflow.keras import preprocessing
 import pickle
 
@@ -9,9 +9,9 @@ def read_corpus_data(filename):
 
     return data
 
-corpus_data = read_corpus_data('./corpus.txt')
+corpus_data = read_corpus_data('project/chatbot/train_tools/dict/corpus02.txt')
 
-p = Preprocess()
+p = Preprocess_0()
 dict = []
 for c in corpus_data:
     pos = p.pos(c[1])
@@ -22,7 +22,7 @@ tokenizer = preprocessing.text.Tokenizer(oov_token='OOV')
 tokenizer.fit_on_texts(dict)
 word_index = tokenizer.word_index
 
-f = open("chatbot_dict.bin" , "wb")
+f = open("project/chatbot/train_tools/dict/chatbot_dict02.bin" , "wb")
 try:
     pickle.dump(word_index, f)
 except Exception as e:

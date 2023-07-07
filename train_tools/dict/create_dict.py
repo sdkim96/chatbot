@@ -9,7 +9,7 @@ def read_corpus_data(filename):
 
     return data
 
-corpus_data = read_corpus_data('project/chatbot/train_tools/dict/corpus02.txt')
+corpus_data = read_corpus_data('project/chatbot/train_tools/dict/corpus03.txt')
 
 p = Preprocess_0()
 dict = []
@@ -22,7 +22,7 @@ tokenizer = preprocessing.text.Tokenizer(oov_token='OOV')
 tokenizer.fit_on_texts(dict)
 word_index = tokenizer.word_index
 
-f = open("project/chatbot/train_tools/dict/chatbot_dict02.bin" , "wb")
+f = open("project/chatbot/train_tools/dict/chatbot_dict03.bin" , "wb")
 try:
     pickle.dump(word_index, f)
 except Exception as e:

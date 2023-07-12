@@ -6,7 +6,7 @@ from tensorflow.keras import preprocessing
 
 # 개체명 인식 모델 모듈
 class NerModel:
-    def __init__(self, model_name, proprocess):
+    def __init__(self, model_name, preprocess):
 
         # BIO 태그 클래스 별 레이블
         self.index_to_ner = {1: 'O', 2: 'B_DT', 3: 'B_FOOD', 4: 'I', 5: 'B_OG', 6: 'B_PS', 7: 'B_LC', 8: 'NNP', 9: 'B_TI', 0: 'PAD'}
@@ -15,7 +15,7 @@ class NerModel:
         self.model = load_model(model_name)
 
         # 챗봇 Preprocess 객체
-        self.p = proprocess
+        self.p = preprocess
 
 
     # 개체명 클래스 예측

@@ -5,7 +5,7 @@ p = Preprocess_1(word2index_dic='project/chatbot/train_tools/dict/chatbot_dict.b
                  userdic='project/chatbot/utils/user_dic.tsv')
 
 
-ner = NerModel(model_name='project/chatbot/models/ner/ner_model_with_userdic.h5', proprocess=p)
+ner = NerModel(model_name='project/chatbot/models/ner/ner_model_with_userdic.h5', preprocess=p)
 
 
 query = '오늘 오전 13시 2분에 탕수육 주문 하고 싶어요'
